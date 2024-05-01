@@ -10,7 +10,8 @@ class Solution:
             
             if index + 1 < len(ratings):
                 if rating > ratings[index + 1]:
-                    candies[index] = candies[index + 1] + 1
+                    if candies[index + 1] + 1 > candies[index]:
+                        candies[index] = candies[index + 1] + 1
 
         print(candies)
 
@@ -28,6 +29,7 @@ print(x.candy([20000, 20000, 16001, 16001, 16002, 16002, 16003, 16004, 16005, 16
 print(x.candy([3, 2, 2, 1, 3, 2, 1]))
 
 print(x.candy([1, 2, 3, 4, 1, 2, 3, 4]))
+print(x.candy([1, 3, 4, 5, 2]))
 
 
 assert(x.candy([1, 2, 3]) == 6)
@@ -36,3 +38,4 @@ assert(x.candy([3, 2, 1]) == 6)
 assert(x.candy([3, 2, 2, 1, 3, 2, 1]) == 12)
 assert(x.candy([6, 7, 6, 5, 4, 3, 2, 1, 0, 0, 0, 1, 0]) == 42)
 assert(x.candy([100, 80, 70, 60, 70, 80, 90, 100, 90, 80, 70, 60, 60]) == 35)
+assert(x.candy([1,3,4,5,2]) == 11)
